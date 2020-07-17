@@ -4,7 +4,47 @@
 
 //#include "layoutDemo.h"
 #include "qwidgetdraw.h"
+#include "qwidgetserialtx.h"
+#include "qwidgetserialrx.h"
 
+
+int main(int argc, char * argv[])
+{
+    QApplication a(argc, argv);
+
+    QWidget *mainWin = new QWidget();
+    QWidgetSerialTx *serialTx = new QWidgetSerialTx(mainWin);
+    QWidgetSerialRx *serialRx = new QWidgetSerialRx(mainWin);
+
+    mainWin->resize(300,300);
+    mainWin->show();
+
+    return a.exec();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
 int main(int argc, char * argv[])
 {
     QApplication a(argc, argv);
@@ -30,3 +70,4 @@ int main(int argc, char * argv[])
     return a.exec();
 }
 
+#endif
