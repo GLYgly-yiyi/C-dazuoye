@@ -2,8 +2,8 @@
 #define QWIDGETSERIALTX_H
 
 #include <QWidget>
-#include <QtSerialPort/QSerialPort>
-#include <QTimer>
+#include<QtSerialPort/QSerialPort>
+#include<QTimer>
 
 class QWidgetSerialTx : public QWidget
 {
@@ -11,13 +11,16 @@ class QWidgetSerialTx : public QWidget
 public:
     QSerialPort *com;
     QTimer *timer;
-    int index = 0;
+    int index=0;
+    int indexSpo2=0;
+    int indexIbp2=0;
 
     explicit QWidgetSerialTx(QWidget *parent = nullptr);
 
     int serialInit(void);
     void sendEcgPkg();
     unsigned int getEcg2Data();
+
 signals:
 
 };
